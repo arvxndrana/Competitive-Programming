@@ -10,7 +10,7 @@ int main(void)
     std::cin >> s4;
     std::cin >> s5;
 
-    std::vector<std::string> S = {s1,s2,s3,s4,s5};
+    std::vector<std::string> s = {s1,s2,s3,s4,s5};
     int l[]  = {0,0,0,0,0,0,0,0,0,0,0,0}; // how many to cross for bingo
 
     // rows
@@ -18,7 +18,7 @@ int main(void)
     for (int i=0;i<5;i++)
     {
         int c = 0;
-        for (char n : S[i])
+        for (char n : s[i])
             if (n == 'o')
                 c++;
         l[i] = 5 - c;
@@ -26,7 +26,7 @@ int main(void)
 
     // column
     
-    for (std::string s : S)
+    for (std::string s : s)
     {
         for (int i=0;i<5;i++)
         {
@@ -39,11 +39,11 @@ int main(void)
     
     for (int i=0;i<5;i++)
     {
-        if ((S[i][i]) == '.')
+        if ((s[i][i]) == '.')
         {
             l[10]++;
         }
-        if (S[4-i][4-i] == '.')
+        if (s[4-i][4-i] == '.')
         {
             l[11]++;
         }
